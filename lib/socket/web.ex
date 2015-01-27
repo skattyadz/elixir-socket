@@ -687,6 +687,9 @@ defmodule Socket.Web do
       { :ok, packet } ->
         packet
 
+      { :error, :timeout } ->
+        { :error, :timeout }
+
       { :error, :protocol_error } ->
         raise RuntimeError, message: "protocol error"
 
